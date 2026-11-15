@@ -1,14 +1,17 @@
-# Tripjot
+# Tripjot — website
 
-Automatic mileage log for UK home carers (HMRC 55p/mile, tax relief on the gap).
+Waitlist landing page for Tripjot, an automatic mileage log for UK home carers
+(HMRC 55p/mile, tax relief on the gap).
+
+The iOS app lives in a separate private repository.
 
 ## Folders
-- `website/` — waitlist landing page (static HTML/CSS/JS). Netlify publishes `website/public`
-  (set **Base directory = `website`** when importing the repo; `website/netlify.toml` does the rest).
-- `app/` — placeholder for the iOS app.
+- `website/` — the site (static HTML/CSS/JS, no build). Netlify publishes `website/public`
+  (Base directory = `website`; `website/netlify.toml` does the rest).
 - `design-previews/` — design sources (icon options, og-image.svg).
 
 ## Папки
 - `website/` — сайт (список очікування). В інтернет потрапляє тільки `website/public`.
-- `app/` — заготовка під застосунок.
 - `design-previews/` — вихідні файли картинок.
+
+Застосунок для iOS лежить в окремому закритому репозиторії.

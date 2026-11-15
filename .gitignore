@@ -4,7 +4,7 @@
 # Local tool settings
 .claude/
 
-# iOS app code is not in the repo yet (see app/README.md)
+# iOS app: separate private repository (not part of this website repo)
 /Tripjot/
 /TripProbe/
 /MileageDemo/
@@ -12,8 +12,3 @@
 # Private notes from other work sessions
 /marketing/
 
-# Xcode (for when the app moves into app/)
-xcuserdata/
-DerivedData/
-*.xcuserstate
-build/
