@@ -1,5 +1,5 @@
 # Netlify settings for the Tripjot waitlist site.
-# Настройки Netlify: сайт лежит в папке public, сборка не нужна.
+# Налаштування Netlify: сайт лежить у папці public, збирання не потрібне.
 [build]
   publish = "public"
 

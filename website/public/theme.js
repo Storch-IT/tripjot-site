@@ -1,6 +1,6 @@
 /* Theme: "auto" follows the phone/computer setting (and changes with it, e.g. at sunset),
    "light" and "dark" are fixed. Loaded in <head> so the page never flashes the wrong theme.
-   Тема: "auto" — как в телефоне/компьютере (и меняется вместе с ним), "light"/"dark" — вручную. */
+   Тема: "auto" — як у телефоні/комп'ютері (і змінюється разом із ним), "light"/"dark" — вручну. */
 (function () {
   "use strict";
   var KEY = "tripjot-theme";

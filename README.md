@@ -9,6 +9,6 @@ Automatic mileage log for UK home carers (HMRC 55p/mile, tax relief on the gap).
 - `design-previews/` — design sources (icon options, og-image.svg).
 
 ## Папки
-- `website/` — сайт (список ожидания). В интернет попадает только `website/public`.
-- `app/` — заготовка под приложение.
-- `design-previews/` — исходники картинок.
+- `website/` — сайт (список очікування). В інтернет потрапляє тільки `website/public`.
+- `app/` — заготовка під застосунок.
+- `design-previews/` — вихідні файли картинок.
