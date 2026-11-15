@@ -282,7 +282,7 @@ input[type="number"], input[type="email"], input[type="text"] {
   width: 100%; min-height: 52px; padding: 0 16px;
   font: inherit; font-size: 1.1rem; color: var(--ink);
   background: var(--field); border: 1.5px solid var(--line); border-radius: 14px;
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  /* no own blur: the field already sits on a glass card (blur inside blur makes Chrome drop the card while scrolling) */
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, .06);
   transition: border-color .15s, box-shadow .15s;
 }
@@ -466,13 +466,11 @@ main { overflow-x: clip; }
 
 /* Soft entrance when blocks scroll into view: see app.js (blocks are never hidden by CSS) */
 
-/* Slow drift of the colour orbs and a gentle float of the phone */
+/* Gentle float of the phone. The background roads and cars stay still: moving blurred shapes
+   behind glass cards make Chrome redraw the glass all the time and it can show blank cards. */
 @media (prefers-reduced-motion: no-preference) {
-  .hero-art .orb, #calculator .orb, #offer .orb { animation: drift 18s ease-in-out infinite alternate; }
-  .hero-art .orb + .orb, #calculator .orb + .orb, #offer .orb + .orb { animation-duration: 23s; animation-direction: alternate-reverse; }
   .phone { animation: float 7s ease-in-out infinite; }
 }
-@keyframes drift { from { transform: translate(0, 0) scale(1); } to { transform: translate(18px, -22px) scale(1.08); } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 /* While the theme or colour is being switched: no transitions (see theme.js) */
 .theme-switching *, .theme-switching *::before, .theme-switching *::after { transition: none !important; }
