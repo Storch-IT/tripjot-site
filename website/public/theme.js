@@ -15,7 +15,8 @@
   }
   function save(v) { try { localStorage.setItem(KEY, v); } catch (e) { /* private mode: still works for this visit */ } }
 
-  var pref = saved();
+  // Switches are hidden on the site for now: always follow the device (old saved choices are ignored)
+  var pref = "auto";
 
   function apply() {
     var dark = pref === "dark" || (pref === "auto" && mq && mq.matches);
@@ -38,26 +39,10 @@
     });
   }
 
-  /* Switch without transitions, then make the browser repaint everything once.
-     Without this some browsers (Chrome on Mac) can leave glass blocks blank after a switch. */
-  function switching(fn) {
-    root.classList.add("theme-switching");
-    fn();
-    if (!document.body) { root.classList.remove("theme-switching"); return; }
-    void document.body.offsetHeight;
-    requestAnimationFrame(function () {
-      document.body.style.transform = "translateZ(0)";
-      requestAnimationFrame(function () {
-        document.body.style.transform = "";
-        root.classList.remove("theme-switching");
-      });
-    });
-  }
-
-  function set(v) { pref = v; save(v); switching(apply); }
+  function set(v) { pref = v; save(v); apply(); }
 
   if (mq) {
-    var onChange = function () { if (pref === "auto") switching(apply); };
+    var onChange = function () { if (pref === "auto") apply(); };
     if (mq.addEventListener) mq.addEventListener("change", onChange); else if (mq.addListener) mq.addListener(onChange);
   }
 
@@ -71,7 +56,8 @@
     try { var v = localStorage.getItem(AKEY); return ACCENTS.indexOf(v) >= 0 ? v : "copper"; }
     catch (e) { return "copper"; }
   }
-  var accent = savedAccent();
+  // Colour switch is hidden for now: always Copper
+  var accent = "copper";
   function applyAccent() {
     root.setAttribute("data-accent", accent);
     var icon = document.querySelector('link[rel="icon"]');
@@ -85,7 +71,7 @@
       b.setAttribute("aria-pressed", b.getAttribute("data-accent-set") === accent ? "true" : "false");
     });
   }
-  function setAccent(v) { accent = v; try { localStorage.setItem(AKEY, v); } catch (e) {} switching(applyAccent); }
+  function setAccent(v) { accent = v; try { localStorage.setItem(AKEY, v); } catch (e) {} applyAccent(); }
   applyAccent();
 
   document.addEventListener("DOMContentLoaded", function () {
