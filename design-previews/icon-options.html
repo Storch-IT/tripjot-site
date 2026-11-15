@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Варианты значка Tripjot</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; padding: 24px 16px 60px; background: #f2f1ec; color: #22272e;
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  h1 { font-size: 1.6rem; margin: 0 0 6px; }
+  .intro { color: #5b6470; margin: 0 0 22px; max-width: 46em; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  .card { background: #fff; border: 1px solid #e4e2dc; border-radius: 22px; padding: 18px; }
+  .card h2 { font-size: 1.15rem; margin: 0 0 4px; }
+  .card p { margin: 0 0 14px; color: #5b6470; font-size: .92rem; min-height: 4em; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .row.small { margin-top: 10px; }
+  .tile { border-radius: 16px; display: grid; place-items: center; padding: 14px 0; position: relative; overflow: hidden; }
+  .tile.light { background: radial-gradient(60% 60% at 15% 20%, rgba(76,122,114,.18), transparent 70%), radial-gradient(50% 50% at 90% 85%, rgba(197,139,75,.14), transparent 70%), #f2f1ec; }
+  .tile.dark { background: radial-gradient(60% 60% at 15% 20%, rgba(156,194,168,.12), transparent 70%), radial-gradient(50% 50% at 90% 85%, rgba(46,74,92,.4), transparent 70%), #0f1115; }
+  .bar { border-radius: 999px; display: flex; align-items: center; gap: 9px; padding: 8px 14px; font-size: 1.1rem; }
+  .bar.light { background: #f2f1ec; } .bar.dark { background: #0f1115; color: #f2f3f5; }
+  .ico { overflow: visible; }
+  .ico.lt .f { fill: url(#gl); } .ico.lt .k { fill: #1e3328; } .ico.lt .ks { stroke: #1e3328; } .ico.lt .w { fill: rgba(255,255,255,.55); }
+  .ico.dk .f { fill: url(#gd); } .ico.dk .k { fill: #10201a; } .ico.dk .ks { stroke: #10201a; } .ico.dk .w { fill: rgba(255,255,255,.32); }
+  .ico.dk .wh { stroke: rgba(190, 228, 206, .55); stroke-width: 1.2; }
+  .ico.dk .edge { stroke: #c3e5d0; }
+  .ico.dk .edgef { fill: #c3e5d0; }
+
+  .card.wide { grid-column: 1 / -1; }
+  .card.wide .tile { padding: 22px 0; }
+  .pin.lt .pbase { fill: rgba(255,255,255,.35); } .pin.lt .prim { stroke: rgba(84,178,132,.62); } .pin.lt .prim-in { stroke: rgba(255,255,255,.55); } .pin.lt .pcar { fill: #17301f; }
+  .pin.dk .pbase { fill: rgba(34,38,47,.40); } .pin.dk .prim { stroke: rgba(140,220,178,.45); } .pin.dk .prim-in { stroke: rgba(255,255,255,.08); } .pin.dk .pcar { fill: #dff3e8; }
+  .pin.lt { filter: drop-shadow(0 6px 10px rgba(60,150,110,.20)); } .pin.dk { filter: drop-shadow(0 6px 12px rgba(0,0,0,.45)); }
+  .hdr { border-radius: 18px; padding: 18px 12px; }
+  .hdr.light { background: radial-gradient(60% 90% at 10% 0%, rgba(76,122,114,.30), transparent 70%), radial-gradient(50% 90% at 95% 100%, rgba(197,139,75,.22), transparent 70%), #f2f1ec; }
+  .hdr.dark { background: radial-gradient(60% 90% at 10% 0%, rgba(156,194,168,.16), transparent 70%), radial-gradient(50% 90% at 95% 100%, rgba(46,74,92,.5), transparent 70%), #0f1115; color: #f2f3f5; }
+  .hdr-in { display: flex; align-items: center; gap: 9px; height: 54px; padding: 0 8px 0 12px; border-radius: 999px; font-size: 1.1rem;
+    -webkit-backdrop-filter: blur(24px) saturate(180%); backdrop-filter: blur(24px) saturate(180%); }
+  .hdr.light .hdr-in { background: linear-gradient(135deg, rgba(150,214,182,.30), rgba(238,232,168,.26)), rgba(255,255,255,.40); border: 1.5px solid rgba(118,178,142,.55);
+    box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.55), inset 0 1px 0 rgba(255,255,255,.85), 0 12px 32px rgba(22,30,26,.09); }
+  .hdr.dark .hdr-in { background: linear-gradient(135deg, rgba(140,200,165,.13), rgba(214,206,140,.07)), rgba(34,38,47,.38); border: 1.5px solid rgba(150,200,170,.32);
+    box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.07), inset 0 1px 0 rgba(255,255,255,.14), 0 14px 40px rgba(0,0,0,.45); }
+  .hbtn { margin-left: auto; font-size: .85rem; font-weight: 700; padding: 9px 14px; border-radius: 999px; }
+  .hdr.light .hbtn { background: linear-gradient(135deg, rgba(126,214,170,.5), rgba(236,232,160,.42)), rgba(255,255,255,.35); border: 1.5px solid rgba(84,178,132,.62); color: #17301f; }
+  .hdr.dark .hbtn { background: linear-gradient(135deg, rgba(126,214,170,.3), rgba(214,206,140,.16)), rgba(34,38,47,.4); border: 1.5px solid rgba(140,220,178,.45); color: #dff3e8; }
+</style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#c3e8d2"/><stop offset=".55" stop-color="#9dbba3"/><stop offset="1" stop-color="#dcd9a4"/>
+      </linearGradient>
+      <linearGradient id="gd" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#b6e0c6"/><stop offset=".55" stop-color="#9cc2a8"/><stop offset="1" stop-color="#d2d09c"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<clipPath id="pinClip"><path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z"/></clipPath>
+<mask id="carMask" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+<path fill="#fff" d="M25.6 17.6h12.8a2.2 2.2 0 0 1 2 1.4l2.2 5.8H21.4l2.2-5.8a2.2 2.2 0 0 1 2-1.4z"/>
+<rect fill="#fff" x="19.6" y="24" width="24.8" height="9.6" rx="3.2"/>
+<rect fill="#fff" x="21.8" y="32" width="4.8" height="4.4" rx="1.5"/><rect fill="#fff" x="37.4" y="32" width="4.8" height="4.4" rx="1.5"/>
+<path fill="#000" d="M26.4 19.6h11.2l1.5 3.8H24.9z"/>
+<circle fill="#000" cx="24.4" cy="28.6" r="1.9"/><circle fill="#000" cx="39.6" cy="28.6" r="1.9"/>
+</mask>
+
+<linearGradient id="tint-lt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="rgb(126,214,170)" stop-opacity="0.55"/><stop offset="1" stop-color="rgb(236,232,160)" stop-opacity="0.46"/></linearGradient>
+<linearGradient id="sheen-lt" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(-10 .5 .5)"><stop offset="0" stop-color="#fff" stop-opacity="0.55"/><stop offset=".38" stop-color="#fff" stop-opacity="0"/><stop offset=".72" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0.55"/></linearGradient>
+<linearGradient id="glowT-lt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="glowB-lt" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0.39"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+
+<linearGradient id="tint-dk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="rgb(126,214,170)" stop-opacity="0.34"/><stop offset="1" stop-color="rgb(214,206,140)" stop-opacity="0.18"/></linearGradient>
+<linearGradient id="sheen-dk" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(-10 .5 .5)"><stop offset="0" stop-color="#fff" stop-opacity="0.12"/><stop offset=".38" stop-color="#fff" stop-opacity="0"/><stop offset=".72" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0.12"/></linearGradient>
+<linearGradient id="glowT-dk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="glowB-dk" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0.08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs></svg>
+  <h1>Варианты значка Tripjot — новые</h1>
+  <p class="intro">Плавные силуэты с мягким переливом мятный → шалфейный → лимонный (как стекло на сайте), светлые окна и тёмные колёса. Трек пути — пунктир: точка — старт, кружок — финиш. Сверху крупно, снизу — в настоящем размере рядом со словом Tripjot. Сайт пока не менялся.</p>
+  <div class="grid">
+  <section class="card pick wide">
+    <h2>E. Метка на карте — стекло как в шапке сайта</h2>
+    <p>Метка из того же стекла, что верхняя панель и зелёные кнопки: полупрозрачный мятно-лимонный перелив, тонкая шалфейная кромка, светлая внутренняя грань, мягкое свечение и отблеск. Машина внутри — тёмная днём и светлая ночью, как текст на кнопках.</p>
+    <div class="row">
+      <div class="tile light"><svg class="pin lt" viewBox="0 0 64 64" width="180" height="180" aria-hidden="true">
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" class="pbase"/>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="url(#tint-lt)"/>
+<g clip-path="url(#pinClip)">
+<rect width="64" height="64" fill="url(#sheen-lt)" opacity=".7"/>
+<rect y="5" width="64" height="16" fill="url(#glowT-lt)"/>
+<rect y="40" width="64" height="18" fill="url(#glowB-lt)"/>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" class="prim-in" stroke-width="3" vector-effect="non-scaling-stroke"/>
+</g>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" class="prim" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+<rect width="64" height="64" class="pcar" mask="url(#carMask)"/>
+</svg></div>
+      <div class="tile dark"><svg class="pin dk" viewBox="0 0 64 64" width="180" height="180" aria-hidden="true">
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" class="pbase"/>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="url(#tint-dk)"/>
+<g clip-path="url(#pinClip)">
+<rect width="64" height="64" fill="url(#sheen-dk)" opacity=".7"/>
+<rect y="5" width="64" height="16" fill="url(#glowT-dk)"/>
+<rect y="40" width="64" height="18" fill="url(#glowB-dk)"/>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" class="prim-in" stroke-width="3" vector-effect="non-scaling-stroke"/>
+</g>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" class="prim" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+<rect width="64" height="64" class="pcar" mask="url(#carMask)"/>
+</svg></div>
+    </div>
+    <div class="row small">
+      <div class="hdr light"><div class="hdr-in"><svg class="pin lt" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true">
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" class="pbase"/>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="url(#tint-lt)"/>
+<g clip-path="url(#pinClip)">
+<rect width="64" height="64" fill="url(#sheen-lt)" opacity=".7"/>
+<rect y="5" width="64" height="16" fill="url(#glowT-lt)"/>
+<rect y="40" width="64" height="18" fill="url(#glowB-lt)"/>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" class="prim-in" stroke-width="3" vector-effect="non-scaling-stroke"/>
+</g>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" class="prim" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+<rect width="64" height="64" class="pcar" mask="url(#carMask)"/>
+</svg><b>Tripjot</b><span class="hbtn">Join the waitlist</span></div></div>
+      <div class="hdr dark"><div class="hdr-in"><svg class="pin dk" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true">
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" class="pbase"/>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="url(#tint-dk)"/>
+<g clip-path="url(#pinClip)">
+<rect width="64" height="64" fill="url(#sheen-dk)" opacity=".7"/>
+<rect y="5" width="64" height="16" fill="url(#glowT-dk)"/>
+<rect y="40" width="64" height="18" fill="url(#glowB-dk)"/>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" class="prim-in" stroke-width="3" vector-effect="non-scaling-stroke"/>
+</g>
+<path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" class="prim" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+<rect width="64" height="64" class="pcar" mask="url(#carMask)"/>
+</svg><b>Tripjot</b><span class="hbtn">Join the waitlist</span></div></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>A. Обтекаемая</h2>
+    <p>Плавный силуэт хэтчбека в профиль, светлые окна, тёмные колёса. По борту пунктиром идёт трек: точка — старт, кружок — финиш.</p>
+    <div class="row">
+      <div class="tile light"><svg class="ico lt" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2A7 7 0 0 0 38.2 43.5H25.8A7 7 0 0 0 11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5Z"/><path class="w" d="M22.6 32C25.6 27.7 29.4 25 34.4 24.4C39.4 23.9 44 24.8 47.2 27.2C48.6 28.3 49.8 29.8 50.6 31.3Z"/><path class="f" d="M35.6 23.8h1.9v8h-1.9z"/><path class="ks" d="M12.5 38C19 38 23 36.2 30.5 36.2S45 38.3 54 37.2" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="11.6" cy="38" r="2.3"/><circle class="ks" cx="55.3" cy="37.1" r="1.9" fill="none" stroke-width="1.6"/><circle class="k wh" cx="18.8" cy="43.8" r="5.6"/><circle class="f" cx="18.8" cy="43.8" r="2"/><circle class="k wh" cx="45.2" cy="43.8" r="5.6"/><circle class="f" cx="45.2" cy="43.8" r="2"/></svg></div>
+      <div class="tile dark"><svg class="ico dk" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2A7 7 0 0 0 38.2 43.5H25.8A7 7 0 0 0 11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5Z"/><path class="w" d="M22.6 32C25.6 27.7 29.4 25 34.4 24.4C39.4 23.9 44 24.8 47.2 27.2C48.6 28.3 49.8 29.8 50.6 31.3Z"/><path class="f" d="M35.6 23.8h1.9v8h-1.9z"/><path class="ks" d="M12.5 38C19 38 23 36.2 30.5 36.2S45 38.3 54 37.2" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="11.6" cy="38" r="2.3"/><circle class="ks" cx="55.3" cy="37.1" r="1.9" fill="none" stroke-width="1.6"/><circle class="k wh" cx="18.8" cy="43.8" r="5.6"/><circle class="f" cx="18.8" cy="43.8" r="2"/><circle class="k wh" cx="45.2" cy="43.8" r="5.6"/><circle class="f" cx="45.2" cy="43.8" r="2"/></svg></div>
+    </div>
+    <div class="row small">
+      <div class="bar light"><svg class="ico lt" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2A7 7 0 0 0 38.2 43.5H25.8A7 7 0 0 0 11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5Z"/><path class="w" d="M22.6 32C25.6 27.7 29.4 25 34.4 24.4C39.4 23.9 44 24.8 47.2 27.2C48.6 28.3 49.8 29.8 50.6 31.3Z"/><path class="f" d="M35.6 23.8h1.9v8h-1.9z"/><path class="ks" d="M12.5 38C19 38 23 36.2 30.5 36.2S45 38.3 54 37.2" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="11.6" cy="38" r="2.3"/><circle class="ks" cx="55.3" cy="37.1" r="1.9" fill="none" stroke-width="1.6"/><circle class="k wh" cx="18.8" cy="43.8" r="5.6"/><circle class="f" cx="18.8" cy="43.8" r="2"/><circle class="k wh" cx="45.2" cy="43.8" r="5.6"/><circle class="f" cx="45.2" cy="43.8" r="2"/></svg><b>Tripjot</b></div>
+      <div class="bar dark"><svg class="ico dk" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2A7 7 0 0 0 38.2 43.5H25.8A7 7 0 0 0 11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5Z"/><path class="w" d="M22.6 32C25.6 27.7 29.4 25 34.4 24.4C39.4 23.9 44 24.8 47.2 27.2C48.6 28.3 49.8 29.8 50.6 31.3Z"/><path class="f" d="M35.6 23.8h1.9v8h-1.9z"/><path class="ks" d="M12.5 38C19 38 23 36.2 30.5 36.2S45 38.3 54 37.2" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="11.6" cy="38" r="2.3"/><circle class="ks" cx="55.3" cy="37.1" r="1.9" fill="none" stroke-width="1.6"/><circle class="k wh" cx="18.8" cy="43.8" r="5.6"/><circle class="f" cx="18.8" cy="43.8" r="2"/><circle class="k wh" cx="45.2" cy="43.8" r="5.6"/><circle class="f" cx="45.2" cy="43.8" r="2"/></svg><b>Tripjot</b></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>B. Нарисована одним треком</h2>
+    <p>Контур машины — это и есть путь: линия начинается точкой у переднего колеса и заканчивается у заднего. Внутри мягкий зелёный перелив.</p>
+    <div class="row">
+      <div class="tile light"><svg class="ico lt" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2A7 7 0 0 0 38.2 43.5H25.8A7 7 0 0 0 11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5Z"/><path class="w" d="M22.6 32C25.6 27.7 29.4 25 34.4 24.4C39.4 23.9 44 24.8 47.2 27.2C48.6 28.3 49.8 29.8 50.6 31.3Z"/><path class="ks edge" d="M11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle class="ks edge" cx="18.8" cy="43.8" r="4.6" fill="none" stroke-width="2.6"/><circle class="ks edge" cx="45.2" cy="43.8" r="4.6" fill="none" stroke-width="2.6"/><circle class="k edgef" cx="11.8" cy="43.5" r="2.6"/><circle class="k edgef" cx="52.2" cy="43.5" r="2.6"/></svg></div>
+      <div class="tile dark"><svg class="ico dk" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2A7 7 0 0 0 38.2 43.5H25.8A7 7 0 0 0 11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5Z"/><path class="w" d="M22.6 32C25.6 27.7 29.4 25 34.4 24.4C39.4 23.9 44 24.8 47.2 27.2C48.6 28.3 49.8 29.8 50.6 31.3Z"/><path class="ks edge" d="M11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle class="ks edge" cx="18.8" cy="43.8" r="4.6" fill="none" stroke-width="2.6"/><circle class="ks edge" cx="45.2" cy="43.8" r="4.6" fill="none" stroke-width="2.6"/><circle class="k edgef" cx="11.8" cy="43.5" r="2.6"/><circle class="k edgef" cx="52.2" cy="43.5" r="2.6"/></svg></div>
+    </div>
+    <div class="row small">
+      <div class="bar light"><svg class="ico lt" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2A7 7 0 0 0 38.2 43.5H25.8A7 7 0 0 0 11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5Z"/><path class="w" d="M22.6 32C25.6 27.7 29.4 25 34.4 24.4C39.4 23.9 44 24.8 47.2 27.2C48.6 28.3 49.8 29.8 50.6 31.3Z"/><path class="ks edge" d="M11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle class="ks edge" cx="18.8" cy="43.8" r="4.6" fill="none" stroke-width="2.6"/><circle class="ks edge" cx="45.2" cy="43.8" r="4.6" fill="none" stroke-width="2.6"/><circle class="k edgef" cx="11.8" cy="43.5" r="2.6"/><circle class="k edgef" cx="52.2" cy="43.5" r="2.6"/></svg><b>Tripjot</b></div>
+      <div class="bar dark"><svg class="ico dk" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2A7 7 0 0 0 38.2 43.5H25.8A7 7 0 0 0 11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5Z"/><path class="w" d="M22.6 32C25.6 27.7 29.4 25 34.4 24.4C39.4 23.9 44 24.8 47.2 27.2C48.6 28.3 49.8 29.8 50.6 31.3Z"/><path class="ks edge" d="M11.8 43.5H8.4C6.8 43.5 5.5 42.2 5.5 40.5C5.5 36.8 7.6 34.6 11.4 33.8L19.6 32.2C23.4 26.4 28 22.4 34.2 21.6C40.8 20.8 46.6 22 50.6 25.2C53 27.1 54.8 29.6 56 32.2C59 33 60.5 35 60.5 38V40.5C60.5 42.3 59.2 43.5 57.4 43.5H52.2" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle class="ks edge" cx="18.8" cy="43.8" r="4.6" fill="none" stroke-width="2.6"/><circle class="ks edge" cx="45.2" cy="43.8" r="4.6" fill="none" stroke-width="2.6"/><circle class="k edgef" cx="11.8" cy="43.5" r="2.6"/><circle class="k edgef" cx="52.2" cy="43.5" r="2.6"/></svg><b>Tripjot</b></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>C. Универсал (ваш), аккуратнее</h2>
+    <p>Ваша машина боком, но с плавными линиями: длинная крыша, два светлых окна, тёмные колёса. Внизу по борту трек пути.</p>
+    <div class="row">
+      <div class="tile light"><svg class="ico lt" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M7.9 45.4C6.3 45.4 5 44.1 5 42.5V37.6C5 35 6.6 33.2 9.2 32.5L18 30.2L26.3 20.8C27.9 19 30.1 18 32.5 18H52.7C56.1 18 58.3 19.5 59.3 22.5L60.9 27.5C61.2 28.4 61.4 29.4 61.4 30.4V42.5C61.4 44.1 60.1 45.4 58.5 45.4H53.6A7.2 7.2 0 0 0 39.4 45.4H25.6A7.2 7.2 0 0 0 11.4 45.4Z"/><path class="w" d="M20.8 30.2L27.6 22.4C28.7 21.1 30.2 20.4 31.8 20.4H38.2V30.2Z"/><path class="w" d="M40.6 20.4H52.2C54.4 20.4 55.9 21.3 56.6 23.2L58.4 30.2H40.6Z"/><path class="ks" d="M11.5 38.6C18.5 38.6 23 36.4 30.5 36.4S46 38.6 55.5 37.6" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="10.4" cy="38.6" r="2.3"/><circle class="ks" cx="56.9" cy="37.5" r="1.9" fill="none" stroke-width="1.6"/><circle class="k wh" cx="18.5" cy="45.6" r="5.8"/><circle class="f" cx="18.5" cy="45.6" r="2.1"/><circle class="k wh" cx="46.5" cy="45.6" r="5.8"/><circle class="f" cx="46.5" cy="45.6" r="2.1"/></svg></div>
+      <div class="tile dark"><svg class="ico dk" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M7.9 45.4C6.3 45.4 5 44.1 5 42.5V37.6C5 35 6.6 33.2 9.2 32.5L18 30.2L26.3 20.8C27.9 19 30.1 18 32.5 18H52.7C56.1 18 58.3 19.5 59.3 22.5L60.9 27.5C61.2 28.4 61.4 29.4 61.4 30.4V42.5C61.4 44.1 60.1 45.4 58.5 45.4H53.6A7.2 7.2 0 0 0 39.4 45.4H25.6A7.2 7.2 0 0 0 11.4 45.4Z"/><path class="w" d="M20.8 30.2L27.6 22.4C28.7 21.1 30.2 20.4 31.8 20.4H38.2V30.2Z"/><path class="w" d="M40.6 20.4H52.2C54.4 20.4 55.9 21.3 56.6 23.2L58.4 30.2H40.6Z"/><path class="ks" d="M11.5 38.6C18.5 38.6 23 36.4 30.5 36.4S46 38.6 55.5 37.6" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="10.4" cy="38.6" r="2.3"/><circle class="ks" cx="56.9" cy="37.5" r="1.9" fill="none" stroke-width="1.6"/><circle class="k wh" cx="18.5" cy="45.6" r="5.8"/><circle class="f" cx="18.5" cy="45.6" r="2.1"/><circle class="k wh" cx="46.5" cy="45.6" r="5.8"/><circle class="f" cx="46.5" cy="45.6" r="2.1"/></svg></div>
+    </div>
+    <div class="row small">
+      <div class="bar light"><svg class="ico lt" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M7.9 45.4C6.3 45.4 5 44.1 5 42.5V37.6C5 35 6.6 33.2 9.2 32.5L18 30.2L26.3 20.8C27.9 19 30.1 18 32.5 18H52.7C56.1 18 58.3 19.5 59.3 22.5L60.9 27.5C61.2 28.4 61.4 29.4 61.4 30.4V42.5C61.4 44.1 60.1 45.4 58.5 45.4H53.6A7.2 7.2 0 0 0 39.4 45.4H25.6A7.2 7.2 0 0 0 11.4 45.4Z"/><path class="w" d="M20.8 30.2L27.6 22.4C28.7 21.1 30.2 20.4 31.8 20.4H38.2V30.2Z"/><path class="w" d="M40.6 20.4H52.2C54.4 20.4 55.9 21.3 56.6 23.2L58.4 30.2H40.6Z"/><path class="ks" d="M11.5 38.6C18.5 38.6 23 36.4 30.5 36.4S46 38.6 55.5 37.6" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="10.4" cy="38.6" r="2.3"/><circle class="ks" cx="56.9" cy="37.5" r="1.9" fill="none" stroke-width="1.6"/><circle class="k wh" cx="18.5" cy="45.6" r="5.8"/><circle class="f" cx="18.5" cy="45.6" r="2.1"/><circle class="k wh" cx="46.5" cy="45.6" r="5.8"/><circle class="f" cx="46.5" cy="45.6" r="2.1"/></svg><b>Tripjot</b></div>
+      <div class="bar dark"><svg class="ico dk" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M7.9 45.4C6.3 45.4 5 44.1 5 42.5V37.6C5 35 6.6 33.2 9.2 32.5L18 30.2L26.3 20.8C27.9 19 30.1 18 32.5 18H52.7C56.1 18 58.3 19.5 59.3 22.5L60.9 27.5C61.2 28.4 61.4 29.4 61.4 30.4V42.5C61.4 44.1 60.1 45.4 58.5 45.4H53.6A7.2 7.2 0 0 0 39.4 45.4H25.6A7.2 7.2 0 0 0 11.4 45.4Z"/><path class="w" d="M20.8 30.2L27.6 22.4C28.7 21.1 30.2 20.4 31.8 20.4H38.2V30.2Z"/><path class="w" d="M40.6 20.4H52.2C54.4 20.4 55.9 21.3 56.6 23.2L58.4 30.2H40.6Z"/><path class="ks" d="M11.5 38.6C18.5 38.6 23 36.4 30.5 36.4S46 38.6 55.5 37.6" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="10.4" cy="38.6" r="2.3"/><circle class="ks" cx="56.9" cy="37.5" r="1.9" fill="none" stroke-width="1.6"/><circle class="k wh" cx="18.5" cy="45.6" r="5.8"/><circle class="f" cx="18.5" cy="45.6" r="2.1"/><circle class="k wh" cx="46.5" cy="45.6" r="5.8"/><circle class="f" cx="46.5" cy="45.6" r="2.1"/></svg><b>Tripjot</b></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>D. Спереди, мягкая</h2>
+    <p>Машина анфас с мягкими плечами и светлым лобовым стеклом. Решётка между фар — маленький трек с точками старта и финиша.</p>
+    <div class="row">
+      <div class="tile light"><svg class="ico lt" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M20.5 14h23a5 5 0 0 1 4.6 3.1L52 27H12l3.9-9.9A5 5 0 0 1 20.5 14z"/><path class="f" d="M8 30.5A5.5 5.5 0 0 1 13.5 25h37a5.5 5.5 0 0 1 5.5 5.5V43a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4z"/><ellipse class="f" cx="6.6" cy="26.6" rx="3.4" ry="2.2"/><ellipse class="f" cx="57.4" cy="26.6" rx="3.4" ry="2.2"/><rect class="k" x="11" y="44.5" width="9" height="9" rx="3"/><rect class="k" x="44" y="44.5" width="9" height="9" rx="3"/><path class="w" d="M22 17.6h20a2.6 2.6 0 0 1 2.4 1.7l2.4 6H17.2l2.4-6a2.6 2.6 0 0 1 2.4-1.7z"/><circle class="k" cx="16.2" cy="34.6" r="3.4"/><circle class="w" cx="15.2" cy="33.6" r="1.1"/><circle class="k" cx="47.8" cy="34.6" r="3.4"/><circle class="w" cx="46.8" cy="33.6" r="1.1"/><path class="ks" d="M25 39.6c3.2 0 4-4 7-4s3.8 4 7 4" fill="none" stroke-width="2" stroke-linecap="round"/><circle class="k" cx="24.4" cy="39.6" r="1.9"/><circle class="ks" cx="39.6" cy="39.6" r="1.6" fill="none" stroke-width="1.4"/></svg></div>
+      <div class="tile dark"><svg class="ico dk" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M20.5 14h23a5 5 0 0 1 4.6 3.1L52 27H12l3.9-9.9A5 5 0 0 1 20.5 14z"/><path class="f" d="M8 30.5A5.5 5.5 0 0 1 13.5 25h37a5.5 5.5 0 0 1 5.5 5.5V43a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4z"/><ellipse class="f" cx="6.6" cy="26.6" rx="3.4" ry="2.2"/><ellipse class="f" cx="57.4" cy="26.6" rx="3.4" ry="2.2"/><rect class="k" x="11" y="44.5" width="9" height="9" rx="3"/><rect class="k" x="44" y="44.5" width="9" height="9" rx="3"/><path class="w" d="M22 17.6h20a2.6 2.6 0 0 1 2.4 1.7l2.4 6H17.2l2.4-6a2.6 2.6 0 0 1 2.4-1.7z"/><circle class="k" cx="16.2" cy="34.6" r="3.4"/><circle class="w" cx="15.2" cy="33.6" r="1.1"/><circle class="k" cx="47.8" cy="34.6" r="3.4"/><circle class="w" cx="46.8" cy="33.6" r="1.1"/><path class="ks" d="M25 39.6c3.2 0 4-4 7-4s3.8 4 7 4" fill="none" stroke-width="2" stroke-linecap="round"/><circle class="k" cx="24.4" cy="39.6" r="1.9"/><circle class="ks" cx="39.6" cy="39.6" r="1.6" fill="none" stroke-width="1.4"/></svg></div>
+    </div>
+    <div class="row small">
+      <div class="bar light"><svg class="ico lt" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M20.5 14h23a5 5 0 0 1 4.6 3.1L52 27H12l3.9-9.9A5 5 0 0 1 20.5 14z"/><path class="f" d="M8 30.5A5.5 5.5 0 0 1 13.5 25h37a5.5 5.5 0 0 1 5.5 5.5V43a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4z"/><ellipse class="f" cx="6.6" cy="26.6" rx="3.4" ry="2.2"/><ellipse class="f" cx="57.4" cy="26.6" rx="3.4" ry="2.2"/><rect class="k" x="11" y="44.5" width="9" height="9" rx="3"/><rect class="k" x="44" y="44.5" width="9" height="9" rx="3"/><path class="w" d="M22 17.6h20a2.6 2.6 0 0 1 2.4 1.7l2.4 6H17.2l2.4-6a2.6 2.6 0 0 1 2.4-1.7z"/><circle class="k" cx="16.2" cy="34.6" r="3.4"/><circle class="w" cx="15.2" cy="33.6" r="1.1"/><circle class="k" cx="47.8" cy="34.6" r="3.4"/><circle class="w" cx="46.8" cy="33.6" r="1.1"/><path class="ks" d="M25 39.6c3.2 0 4-4 7-4s3.8 4 7 4" fill="none" stroke-width="2" stroke-linecap="round"/><circle class="k" cx="24.4" cy="39.6" r="1.9"/><circle class="ks" cx="39.6" cy="39.6" r="1.6" fill="none" stroke-width="1.4"/></svg><b>Tripjot</b></div>
+      <div class="bar dark"><svg class="ico dk" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M20.5 14h23a5 5 0 0 1 4.6 3.1L52 27H12l3.9-9.9A5 5 0 0 1 20.5 14z"/><path class="f" d="M8 30.5A5.5 5.5 0 0 1 13.5 25h37a5.5 5.5 0 0 1 5.5 5.5V43a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4z"/><ellipse class="f" cx="6.6" cy="26.6" rx="3.4" ry="2.2"/><ellipse class="f" cx="57.4" cy="26.6" rx="3.4" ry="2.2"/><rect class="k" x="11" y="44.5" width="9" height="9" rx="3"/><rect class="k" x="44" y="44.5" width="9" height="9" rx="3"/><path class="w" d="M22 17.6h20a2.6 2.6 0 0 1 2.4 1.7l2.4 6H17.2l2.4-6a2.6 2.6 0 0 1 2.4-1.7z"/><circle class="k" cx="16.2" cy="34.6" r="3.4"/><circle class="w" cx="15.2" cy="33.6" r="1.1"/><circle class="k" cx="47.8" cy="34.6" r="3.4"/><circle class="w" cx="46.8" cy="33.6" r="1.1"/><path class="ks" d="M25 39.6c3.2 0 4-4 7-4s3.8 4 7 4" fill="none" stroke-width="2" stroke-linecap="round"/><circle class="k" cx="24.4" cy="39.6" r="1.9"/><circle class="ks" cx="39.6" cy="39.6" r="1.6" fill="none" stroke-width="1.4"/></svg><b>Tripjot</b></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>E. Метка на карте</h2>
+    <p>Знак места на карте в форме капли, внутри машина спереди. Сразу понятно: поездки и места.</p>
+    <div class="row">
+      <div class="tile light"><svg class="ico lt" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z"/><path class="w" d="M32 7.6c-10.2 0-18.4 8-18.4 18 0 2 .3 3.9.9 5.8C16 21 23.4 13.4 33 12.6c3.9-.3 7.5.6 10.6 2.4C40.4 10.4 36.4 7.6 32 7.6z"/><path class="k" d="M25.6 17.6h12.8a2.2 2.2 0 0 1 2 1.4l2.2 5.8H21.4l2.2-5.8a2.2 2.2 0 0 1 2-1.4z"/><rect class="k" x="19.6" y="24" width="24.8" height="9.6" rx="3.2"/><rect class="k" x="21.8" y="32" width="4.8" height="4.4" rx="1.5"/><rect class="k" x="37.4" y="32" width="4.8" height="4.4" rx="1.5"/><path class="f" d="M26.4 19.6h11.2l1.5 3.8H24.9z"/><circle class="f" cx="24.4" cy="28.6" r="1.9"/><circle class="f" cx="39.6" cy="28.6" r="1.9"/></svg></div>
+      <div class="tile dark"><svg class="ico dk" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><path class="f" d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z"/><path class="w" d="M32 7.6c-10.2 0-18.4 8-18.4 18 0 2 .3 3.9.9 5.8C16 21 23.4 13.4 33 12.6c3.9-.3 7.5.6 10.6 2.4C40.4 10.4 36.4 7.6 32 7.6z"/><path class="k" d="M25.6 17.6h12.8a2.2 2.2 0 0 1 2 1.4l2.2 5.8H21.4l2.2-5.8a2.2 2.2 0 0 1 2-1.4z"/><rect class="k" x="19.6" y="24" width="24.8" height="9.6" rx="3.2"/><rect class="k" x="21.8" y="32" width="4.8" height="4.4" rx="1.5"/><rect class="k" x="37.4" y="32" width="4.8" height="4.4" rx="1.5"/><path class="f" d="M26.4 19.6h11.2l1.5 3.8H24.9z"/><circle class="f" cx="24.4" cy="28.6" r="1.9"/><circle class="f" cx="39.6" cy="28.6" r="1.9"/></svg></div>
+    </div>
+    <div class="row small">
+      <div class="bar light"><svg class="ico lt" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z"/><path class="w" d="M32 7.6c-10.2 0-18.4 8-18.4 18 0 2 .3 3.9.9 5.8C16 21 23.4 13.4 33 12.6c3.9-.3 7.5.6 10.6 2.4C40.4 10.4 36.4 7.6 32 7.6z"/><path class="k" d="M25.6 17.6h12.8a2.2 2.2 0 0 1 2 1.4l2.2 5.8H21.4l2.2-5.8a2.2 2.2 0 0 1 2-1.4z"/><rect class="k" x="19.6" y="24" width="24.8" height="9.6" rx="3.2"/><rect class="k" x="21.8" y="32" width="4.8" height="4.4" rx="1.5"/><rect class="k" x="37.4" y="32" width="4.8" height="4.4" rx="1.5"/><path class="f" d="M26.4 19.6h11.2l1.5 3.8H24.9z"/><circle class="f" cx="24.4" cy="28.6" r="1.9"/><circle class="f" cx="39.6" cy="28.6" r="1.9"/></svg><b>Tripjot</b></div>
+      <div class="bar dark"><svg class="ico dk" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><path class="f" d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z"/><path class="w" d="M32 7.6c-10.2 0-18.4 8-18.4 18 0 2 .3 3.9.9 5.8C16 21 23.4 13.4 33 12.6c3.9-.3 7.5.6 10.6 2.4C40.4 10.4 36.4 7.6 32 7.6z"/><path class="k" d="M25.6 17.6h12.8a2.2 2.2 0 0 1 2 1.4l2.2 5.8H21.4l2.2-5.8a2.2 2.2 0 0 1 2-1.4z"/><rect class="k" x="19.6" y="24" width="24.8" height="9.6" rx="3.2"/><rect class="k" x="21.8" y="32" width="4.8" height="4.4" rx="1.5"/><rect class="k" x="37.4" y="32" width="4.8" height="4.4" rx="1.5"/><path class="f" d="M26.4 19.6h11.2l1.5 3.8H24.9z"/><circle class="f" cx="24.4" cy="28.6" r="1.9"/><circle class="f" cx="39.6" cy="28.6" r="1.9"/></svg><b>Tripjot</b></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>F. Значок-приложение</h2>
+    <p>Если нужен квадратный значок как у приложения: стеклянный квадрат с переливом, внутри машина и трек под ней.</p>
+    <div class="row">
+      <div class="tile light"><svg class="ico lt" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><rect class="f" x="2" y="2" width="60" height="60" rx="16"/><path class="w" d="M2 18C2 9.2 9.2 2 18 2h28c8.8 0 16 7.2 16 16v2C50 12 34 9 18 12 10.6 13.4 5.2 16 2 20z"/><path class="k" d="M12 33.2c0-1.8 1.2-3 3-3.5l5.6-1.2c2.4-3.6 5.4-6.1 9.3-6.6 4.2-.5 7.8.2 10.4 2.2 1.5 1.2 2.6 2.7 3.4 4.4 2 .6 3 1.9 3 3.8v1.6c0 1.1-.9 1.9-2 1.9h-3.2a4.6 4.6 0 0 0-9.1 0h-7.9a4.6 4.6 0 0 0-9.1 0h-1.6c-1 0-1.8-.8-1.8-1.9z"/><path class="f" d="M23.2 28.6c1.9-2.6 4.3-4.3 7.4-4.6 3.1-.3 6 .3 8 1.8.9.7 1.6 1.6 2.1 2.6z"/><circle class="k" cx="19.4" cy="36.8" r="3.6"/><circle class="k" cx="36.4" cy="36.8" r="3.6"/><path class="ks" d="M14 49c6 0 9-3.4 16-3.4S43 49 50 47.6" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="13" cy="49" r="2.5"/><circle class="ks" cx="51.4" cy="47.4" r="2.1" fill="none" stroke-width="1.7"/></svg></div>
+      <div class="tile dark"><svg class="ico dk" viewBox="0 0 64 64" width="170" height="170" aria-hidden="true"><rect class="f" x="2" y="2" width="60" height="60" rx="16"/><path class="w" d="M2 18C2 9.2 9.2 2 18 2h28c8.8 0 16 7.2 16 16v2C50 12 34 9 18 12 10.6 13.4 5.2 16 2 20z"/><path class="k" d="M12 33.2c0-1.8 1.2-3 3-3.5l5.6-1.2c2.4-3.6 5.4-6.1 9.3-6.6 4.2-.5 7.8.2 10.4 2.2 1.5 1.2 2.6 2.7 3.4 4.4 2 .6 3 1.9 3 3.8v1.6c0 1.1-.9 1.9-2 1.9h-3.2a4.6 4.6 0 0 0-9.1 0h-7.9a4.6 4.6 0 0 0-9.1 0h-1.6c-1 0-1.8-.8-1.8-1.9z"/><path class="f" d="M23.2 28.6c1.9-2.6 4.3-4.3 7.4-4.6 3.1-.3 6 .3 8 1.8.9.7 1.6 1.6 2.1 2.6z"/><circle class="k" cx="19.4" cy="36.8" r="3.6"/><circle class="k" cx="36.4" cy="36.8" r="3.6"/><path class="ks" d="M14 49c6 0 9-3.4 16-3.4S43 49 50 47.6" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="13" cy="49" r="2.5"/><circle class="ks" cx="51.4" cy="47.4" r="2.1" fill="none" stroke-width="1.7"/></svg></div>
+    </div>
+    <div class="row small">
+      <div class="bar light"><svg class="ico lt" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><rect class="f" x="2" y="2" width="60" height="60" rx="16"/><path class="w" d="M2 18C2 9.2 9.2 2 18 2h28c8.8 0 16 7.2 16 16v2C50 12 34 9 18 12 10.6 13.4 5.2 16 2 20z"/><path class="k" d="M12 33.2c0-1.8 1.2-3 3-3.5l5.6-1.2c2.4-3.6 5.4-6.1 9.3-6.6 4.2-.5 7.8.2 10.4 2.2 1.5 1.2 2.6 2.7 3.4 4.4 2 .6 3 1.9 3 3.8v1.6c0 1.1-.9 1.9-2 1.9h-3.2a4.6 4.6 0 0 0-9.1 0h-7.9a4.6 4.6 0 0 0-9.1 0h-1.6c-1 0-1.8-.8-1.8-1.9z"/><path class="f" d="M23.2 28.6c1.9-2.6 4.3-4.3 7.4-4.6 3.1-.3 6 .3 8 1.8.9.7 1.6 1.6 2.1 2.6z"/><circle class="k" cx="19.4" cy="36.8" r="3.6"/><circle class="k" cx="36.4" cy="36.8" r="3.6"/><path class="ks" d="M14 49c6 0 9-3.4 16-3.4S43 49 50 47.6" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="13" cy="49" r="2.5"/><circle class="ks" cx="51.4" cy="47.4" r="2.1" fill="none" stroke-width="1.7"/></svg><b>Tripjot</b></div>
+      <div class="bar dark"><svg class="ico dk" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><rect class="f" x="2" y="2" width="60" height="60" rx="16"/><path class="w" d="M2 18C2 9.2 9.2 2 18 2h28c8.8 0 16 7.2 16 16v2C50 12 34 9 18 12 10.6 13.4 5.2 16 2 20z"/><path class="k" d="M12 33.2c0-1.8 1.2-3 3-3.5l5.6-1.2c2.4-3.6 5.4-6.1 9.3-6.6 4.2-.5 7.8.2 10.4 2.2 1.5 1.2 2.6 2.7 3.4 4.4 2 .6 3 1.9 3 3.8v1.6c0 1.1-.9 1.9-2 1.9h-3.2a4.6 4.6 0 0 0-9.1 0h-7.9a4.6 4.6 0 0 0-9.1 0h-1.6c-1 0-1.8-.8-1.8-1.9z"/><path class="f" d="M23.2 28.6c1.9-2.6 4.3-4.3 7.4-4.6 3.1-.3 6 .3 8 1.8.9.7 1.6 1.6 2.1 2.6z"/><circle class="k" cx="19.4" cy="36.8" r="3.6"/><circle class="k" cx="36.4" cy="36.8" r="3.6"/><path class="ks" d="M14 49c6 0 9-3.4 16-3.4S43 49 50 47.6" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.01 4.2"/><circle class="k" cx="13" cy="49" r="2.5"/><circle class="ks" cx="51.4" cy="47.4" r="2.1" fill="none" stroke-width="1.7"/></svg><b>Tripjot</b></div>
+    </div>
+  </section>
+  </div>
+</body>
+</html>
