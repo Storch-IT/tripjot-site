@@ -130,8 +130,16 @@
   if ("IntersectionObserver" in window) {
     document.documentElement.classList.add("js");
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { var t = en.target; t.classList.add("in"); io.unobserve(t); setTimeout(function () { t.style.transitionDelay = ""; }, 1200); } });
+      entries.forEach(function (en) { if (en.isIntersecting) show(en.target); });
     }, { rootMargin: "0px 0px -8% 0px" });
+    // After the entrance animation the block goes back to a plain element (no opacity/transform layer),
+    // so a theme or colour change later cannot leave glass cards unpainted in some browsers.
+    var show = function (t) {
+      if (t.classList.contains("in")) return;
+      t.classList.add("in");
+      io.unobserve(t);
+      setTimeout(function () { t.classList.remove("reveal", "in"); t.style.transitionDelay = ""; }, 1100);
+    };
     var revealEls = document.querySelectorAll(".section .card, .steps li, .why li, .faq details, .offer, .section h2");
     revealEls.forEach(function (el, i) {
       el.classList.add("reveal");
@@ -141,7 +149,7 @@
     // safety net: if the observer is slow, reveal anything already on screen when the visitor scrolls
     var check = function () {
       revealEls.forEach(function (el) {
-        if (!el.classList.contains("in") && el.getBoundingClientRect().top < window.innerHeight) el.classList.add("in");
+        if (el.classList.contains("reveal") && el.getBoundingClientRect().top < window.innerHeight) show(el);
       });
     };
     window.addEventListener("scroll", check, { passive: true });

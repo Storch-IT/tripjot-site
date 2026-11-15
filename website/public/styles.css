@@ -477,6 +477,8 @@ main { overflow-x: clip; }
 @keyframes drift { from { transform: translate(0, 0) scale(1); } to { transform: translate(18px, -22px) scale(1.08); } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
+/* While the theme or colour is being switched: no transitions (see theme.js) */
+.theme-switching *, .theme-switching *::before, .theme-switching *::after { transition: none !important; }
 
 /* ---------- Shapes from the reference ---------- */
 .steps li { border-radius: var(--radius); text-align: center; }

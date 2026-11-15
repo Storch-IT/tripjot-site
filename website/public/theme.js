@@ -38,10 +38,26 @@
     });
   }
 
-  function set(v) { pref = v; save(v); apply(); }
+  /* Switch without transitions, then make the browser repaint everything once.
+     Without this some browsers (Chrome on Mac) can leave glass blocks blank after a switch. */
+  function switching(fn) {
+    root.classList.add("theme-switching");
+    fn();
+    if (!document.body) { root.classList.remove("theme-switching"); return; }
+    void document.body.offsetHeight;
+    requestAnimationFrame(function () {
+      document.body.style.transform = "translateZ(0)";
+      requestAnimationFrame(function () {
+        document.body.style.transform = "";
+        root.classList.remove("theme-switching");
+      });
+    });
+  }
+
+  function set(v) { pref = v; save(v); switching(apply); }
 
   if (mq) {
-    var onChange = function () { if (pref === "auto") apply(); };
+    var onChange = function () { if (pref === "auto") switching(apply); };
     if (mq.addEventListener) mq.addEventListener("change", onChange); else if (mq.addListener) mq.addListener(onChange);
   }
 
@@ -69,7 +85,7 @@
       b.setAttribute("aria-pressed", b.getAttribute("data-accent-set") === accent ? "true" : "false");
     });
   }
-  function setAccent(v) { accent = v; try { localStorage.setItem(AKEY, v); } catch (e) {} applyAccent(); }
+  function setAccent(v) { accent = v; try { localStorage.setItem(AKEY, v); } catch (e) {} switching(applyAccent); }
   applyAccent();
 
   document.addEventListener("DOMContentLoaded", function () {
