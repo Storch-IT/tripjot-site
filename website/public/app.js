@@ -126,35 +126,29 @@
     update();
   }
 
-  /* ---------- Soft entrance on scroll ---------- */
-  if ("IntersectionObserver" in window) {
-    document.documentElement.classList.add("js");
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) show(en.target); });
-    }, { rootMargin: "0px 0px -8% 0px" });
-    // After the entrance animation the block goes back to a plain element (no opacity/transform layer),
-    // so a theme or colour change later cannot leave glass cards unpainted in some browsers.
-    var show = function (t) {
-      if (t.classList.contains("in")) return;
-      t.classList.add("in");
-      io.unobserve(t);
-      setTimeout(function () { t.classList.remove("reveal", "in"); t.style.transitionDelay = ""; }, 1100);
-    };
+  /* ---------- Soft entrance on scroll ----------
+     Blocks are never hidden by CSS: they are always visible. When a block first comes on screen,
+     a short one-off animation plays on it. If anything goes wrong (old browser, theme switch,
+     slow computer), the worst case is "no animation", never "missing block". */
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window && !reduceMotion && Element.prototype.animate) {
     var revealEls = document.querySelectorAll(".section .card, .steps li, .why li, .faq details, .offer, .section h2");
-    revealEls.forEach(function (el, i) {
-      el.classList.add("reveal");
-      el.style.transitionDelay = (i % 4) * 70 + "ms";
-      io.observe(el);
-    });
-    // safety net: if the observer is slow, reveal anything already on screen when the visitor scrolls
-    var check = function () {
-      revealEls.forEach(function (el) {
-        if (el.classList.contains("reveal") && el.getBoundingClientRect().top < window.innerHeight) show(el);
+    var startY = window.scrollY || 0;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var t = en.target;
+        io.unobserve(t);
+        // blocks already on screen when the page opens, or above it, just stay as they are
+        if ((window.scrollY || 0) === startY && en.boundingClientRect.top < window.innerHeight * 0.9) return;
+        if (en.boundingClientRect.top < 0) return;
+        t.animate(
+          [{ opacity: 0, transform: "translateY(14px) scale(.985)" }, { opacity: 1, transform: "none" }],
+          { duration: 650, delay: (Array.prototype.indexOf.call(revealEls, t) % 4) * 60, easing: "cubic-bezier(.2, .7, .2, 1)", fill: "backwards" }
+        );
       });
-    };
-    window.addEventListener("scroll", check, { passive: true });
-    window.addEventListener("load", check);
-    window.addEventListener("hashchange", check);
+    });
+    revealEls.forEach(function (el) { io.observe(el); });
   }
 
   /* ---------- Floating glass button (phones) ----------

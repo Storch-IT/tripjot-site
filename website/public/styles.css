@@ -464,9 +464,7 @@ main { overflow-x: clip; }
 .faq details[open] p { animation: faq-in .35s ease both; }
 @keyframes faq-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 
-/* Soft entrance when blocks scroll into view (only when JS is on) */
-.js .reveal { opacity: 0; transform: translateY(14px) scale(.985); transition: opacity .7s ease, transform .8s cubic-bezier(.2, .7, .2, 1); }
-.js .reveal.in { opacity: 1; transform: none; }
+/* Soft entrance when blocks scroll into view: see app.js (blocks are never hidden by CSS) */
 
 /* Slow drift of the colour orbs and a gentle float of the phone */
 @media (prefers-reduced-motion: no-preference) {
@@ -476,7 +474,6 @@ main { overflow-x: clip; }
 }
 @keyframes drift { from { transform: translate(0, 0) scale(1); } to { transform: translate(18px, -22px) scale(1.08); } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
 /* While the theme or colour is being switched: no transitions (see theme.js) */
 .theme-switching *, .theme-switching *::before, .theme-switching *::after { transition: none !important; }
 
