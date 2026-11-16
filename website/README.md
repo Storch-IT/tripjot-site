@@ -33,6 +33,7 @@
 ## Лічильники
 Підключено **Umami** (cloud.umami.is, регіон EU, сайт `Tripjot`). Скрипт стоїть у `<head>` обох сторінок і рахує відвідування лише на `tripjot.app` (на localhost — ні).
 `app.js` надсилає події `cta_click`, `calculator_used`, `signup` (з `role`). Їх видно в Umami → Tripjot → Events.
+**Свої пристрої не рахувати:** один раз відкрийте `https://tripjot.app/?me` на кожному пристрої (з'явиться напис, що пристрій більше не рахується). Повернути: `https://tripjot.app/?me=off`.
 Umami не використовує cookies, тому банер згоди не потрібен. Якщо додати Meta Pixel або інший інструмент із cookies — треба оновити розділ Cookies у `privacy.html` і додати банер згоди.
 
 ## Посилання для реклами
