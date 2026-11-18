@@ -62,6 +62,15 @@
   }
   window.tripjotTaxBack = taxBack; // handy for checking in the console
 
+  /* Self-employed (simplified expenses):
+     claim    = 55p × first 10,000 + 25p above (35p from 6 April 2027), miles = weekly × 46
+     taxSaved = claim × tax rate          Check: 130 a week, 20% → £3,289 claim, £658 less tax */
+  function selfClaim(weeklyMiles, overRate) {
+    var yearMiles = Math.max(0, weeklyMiles) * WEEKS;
+    return 0.55 * Math.min(yearMiles, FIRST_BAND) + overRate * Math.max(0, yearMiles - FIRST_BAND);
+  }
+  window.tripjotSelfClaim = selfClaim;
+
   function formatPounds(x) {
     var rounded = x >= 100 ? Math.round(x / 10) * 10 : Math.round(x);
     return "£" + rounded.toLocaleString("en-GB");
@@ -95,8 +104,13 @@
     var resultEl = document.getElementById("calc-result");
     var noneEl = document.getElementById("calc-none");
     var overRate = overRateFor(new Date());
-    var overRateText = document.getElementById("over-rate");
-    if (overRateText) overRateText.textContent = Math.round(overRate * 100) + "p";
+    document.querySelectorAll(".over-rate").forEach(function (el) { el.textContent = Math.round(overRate * 100) + "p"; });
+    var penceField = document.getElementById("pence-field");
+    var selfBox = document.getElementById("calc-self");
+    var selfClaimEl = document.getElementById("self-claim");
+    var selfTaxEl = document.getElementById("self-tax");
+    var fineEmployed = document.getElementById("fine-employed");
+    var fineSelf = document.getElementById("fine-self");
     var used = false;
 
     function num(el) {
@@ -107,6 +121,20 @@
     function update() {
       var rateEl = calc.querySelector('input[name="rate"]:checked');
       var rate = rateEl ? parseFloat(rateEl.value) : 0.2;
+      var modeEl = calc.querySelector('input[name="mode"]:checked');
+      var self = modeEl && modeEl.value === "self";
+      penceField.hidden = self;
+      fineEmployed.hidden = self;
+      fineSelf.hidden = !self;
+      selfBox.hidden = !self;
+      if (self) {
+        resultEl.hidden = true;
+        noneEl.hidden = true;
+        var claim = selfClaim(num(milesEl), overRate);
+        countTo(selfClaimEl, claim);
+        selfTaxEl.textContent = formatPounds(claim * rate);
+        return;
+      }
       var x = taxBack(num(milesEl), num(penceEl), rate, overRate);
       if (x < 1) {
         resultEl.hidden = true;
@@ -123,6 +151,13 @@
       if (!used) { used = true; track("calculator_used"); }
     });
     calc.addEventListener("submit", function (e) { e.preventDefault(); });
+    // "Work out my tax back" / "See what my miles are worth" links open the right tab
+    document.querySelectorAll("[data-calc-mode]").forEach(function (a) {
+      a.addEventListener("click", function () {
+        var r = document.getElementById(a.getAttribute("data-calc-mode") === "self" ? "mode-self" : "mode-employed");
+        if (r) { r.checked = true; update(); }
+      });
+    });
     update();
   }
 
@@ -197,8 +232,11 @@
     }
   });
   consentEl.addEventListener("change", function () { if (consentEl.checked) consentErr.hidden = true; });
-  form.querySelectorAll('input[name="role"]').forEach(function (r) {
-    r.addEventListener("change", function () { document.getElementById("role-error").hidden = true; });
+  var CHOICE_GROUPS = ["work_type", "job"];
+  CHOICE_GROUPS.forEach(function (name) {
+    form.querySelectorAll('input[name="' + name + '"]').forEach(function (r) {
+      r.addEventListener("change", function () { document.getElementById(name + "-error").hidden = true; });
+    });
   });
 
   form.addEventListener("submit", function (e) {
@@ -209,12 +247,16 @@
     if (!validEmail(emailEl.value.trim())) {
       emailErr.hidden = false; emailEl.setAttribute("aria-invalid", "true"); ok = false;
     }
-    var roleEl = form.querySelector('input[name="role"]:checked');
-    var roleErr = document.getElementById("role-error");
-    if (!roleEl) { roleErr.hidden = false; ok = false; }
+    var firstMissing = null;
+    CHOICE_GROUPS.forEach(function (name) {
+      if (!form.querySelector('input[name="' + name + '"]:checked')) {
+        document.getElementById(name + "-error").hidden = false; ok = false;
+        if (!firstMissing) firstMissing = form.querySelector('input[name="' + name + '"]');
+      }
+    });
     if (!consentEl.checked) { consentErr.hidden = false; ok = false; }
     if (!ok) {
-      var first = !emailErr.hidden ? emailEl : (!roleEl ? form.querySelector('input[name="role"]') : consentEl);
+      var first = !emailErr.hidden ? emailEl : (firstMissing || consentEl);
       first.focus();
       return;
     }
@@ -230,7 +272,7 @@
     data.set("page", window.location.pathname);
     UTM_KEYS.forEach(function (k) { if (params.get(k)) data.set(k, params.get(k)); });
 
-    var role = data.get("role");
+    var role = { work_type: data.get("work_type"), job: data.get("job") };
 
     var endpoint = cfg.formEndpoint || "";
     if (endpoint === "auto") {
@@ -243,7 +285,7 @@
     if (!endpoint) {
       // Test mode: nothing leaves the browser.
       console.warn("[waitlist] Test mode — nothing sent. Would send:", Object.fromEntries(data));
-      track("signup", { role: role });
+      track("signup", role);
       showThanks();
       return;
     }
@@ -257,7 +299,7 @@
     })
       .then(function (res) {
         if (!res.ok) throw new Error("HTTP " + res.status);
-        track("signup", { role: role });
+        track("signup", role);
         showThanks();
       })
       .catch(function () {

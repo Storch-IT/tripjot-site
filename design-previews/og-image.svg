@@ -55,8 +55,8 @@
   <text x="232" y="180" font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="46" font-weight="800" fill="#22272e" letter-spacing="-1">Tripjot</text>
 
   <text font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-weight="800" fill="#22272e" letter-spacing="-2.5">
-    <tspan x="134" y="318" font-size="78">Paid less than 55p a mile?</tspan>
-    <tspan x="134" y="408" font-size="78" fill="#9a5a3a">Get the tax back.</tspan>
+    <tspan x="134" y="318" font-size="78">Every work mile,</tspan>
+    <tspan x="134" y="408" font-size="78" fill="#9a5a3a">logged automatically.</tspan>
   </text>
-  <text x="136" y="490" font-family="-apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="500" fill="#4b5664">For home carers in the UK · Join the waitlist</text>
+  <text x="136" y="490" font-family="-apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="500" fill="#4b5664">For anyone who drives for work in the UK</text>
 </svg>

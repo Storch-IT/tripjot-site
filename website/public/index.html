@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Tripjot – mileage tax back for home carers</title>
-  <meta name="description" content="Paid less than 55p a mile? Tripjot records every work drive on your rounds automatically and gives you the totals HMRC asks for. Built for home carers in the UK.">
-  <meta property="og:title" content="Paid less than 55p a mile? Get the tax back.">
-  <meta property="og:description" content="Tripjot records every work drive on your rounds automatically. Built for home carers in the UK. Join the waitlist.">
+  <title>Tripjot – automatic mileage log for work drives in the UK</title>
+  <meta name="description" content="Tripjot records every work drive on your iPhone and gives you HMRC-ready totals. For carers and anyone who uses their own car for work.">
+  <meta property="og:title" content="Every work mile, logged automatically.">
+  <meta property="og:description" content="Tripjot records every work drive on your iPhone and gives you HMRC-ready totals. For carers and anyone who uses their own car for work. Join the waitlist.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tripjot">
   <meta property="og:url" content="https://tripjot.app/">
   <meta property="og:image" content="https://tripjot.app/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Tripjot: paid less than 55p a mile? Get the tax back.">
+  <meta property="og:image:alt" content="Tripjot: every work mile, logged automatically.">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="color-scheme" content="light dark">
@@ -52,12 +52,12 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-text">
-          <p class="chip chip-glass eyebrow">For home carers in the UK</p>
-          <h1>Paid less than 55p a mile? Get the tax back.</h1>
-          <p class="lead">Tripjot records every work drive on your rounds automatically and gives you the totals HMRC asks for. No more mileage notebooks.</p>
+          <p class="chip chip-glass eyebrow">For anyone in the UK who drives their own car for work</p>
+          <h1>Every work mile, logged automatically.</h1>
+          <p class="lead">Tripjot records each drive by itself and gives you the totals HMRC asks for. Made for home carers, and anyone with lots of short work trips.</p>
           <div class="hero-actions">
             <a class="btn" href="#waitlist" data-track="cta_click">Join the waitlist</a>
-            <a class="btn btn-glass" href="#calculator">How much could I get back?</a>
+            <a class="btn btn-glass" href="#calculator">How much is my mileage worth?</a>
           </div>
         </div>
 
@@ -68,14 +68,14 @@
             <div class="app">
               <div class="app-head">
                 <div class="app-title">Trips</div>
-                <div class="app-sub">This tax year · tax back so far</div>
-                <div class="app-big">£182</div>
-                <div class="app-sub">3,640 work miles · agency paid 30p</div>
+                <div class="app-sub">This tax year · work miles</div>
+                <div class="app-big">3,640</div>
+                <div class="app-sub">worth £2,002 at 55p</div>
               </div>
               <div class="app-card app-review">
                 <div class="app-row">
                   <div><b>Client → 14 Ash Grove</b><small>Today, 13:41–13:55</small></div>
-                  <div class="r"><b>6.0 mi</b><small>£0.30 tax back</small></div>
+                  <div class="r"><b>6.0 mi</b><small>£3.30 at 55p</small></div>
                 </div>
                 <div class="app-pills"><span class="app-pill">Personal</span><span class="app-pill biz">Business</span></div>
               </div>
@@ -95,13 +95,41 @@
       </div>
     </section>
 
-    <!-- 2. Calculator -->
+    <!-- 2. Two paths -->
+    <section class="section" id="paths">
+      <div class="wrap">
+        <h2>Employed or self-employed? It works for both.</h2>
+        <div class="paths">
+          <div class="card path">
+            <h3>Employed and paid under 55p a mile?</h3>
+            <p>You can claim tax back on the difference with form P87. Tripjot keeps the record and shows how much.</p>
+            <a class="path-link" href="#calculator" data-calc-mode="employed">Work out my tax back <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="card path">
+            <h3>Self-employed?</h3>
+            <p>Claim 55p a mile on your tax return. Tripjot gives you a clear mileage log for Self Assessment or your accountant.</p>
+            <a class="path-link" href="#calculator" data-calc-mode="self">See what my miles are worth <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Calculator -->
     <section class="section" id="calculator">
       <div class="orb orb-solid-b" aria-hidden="true" style="width:240px; left:-60px; top:120px"></div>
       <div class="orb orb-solid-a" aria-hidden="true" style="width:200px; right:-40px; bottom:40px"></div>
       <div class="wrap narrow">
-        <h2>How much tax could you get back?</h2>
+        <h2>How much is your mileage worth?</h2>
         <form class="calc card" id="calc" novalidate>
+          <fieldset class="field">
+            <legend class="sr-only">I work</legend>
+            <div class="seg seg-mode">
+              <input type="radio" id="mode-employed" name="mode" value="employed" checked>
+              <label for="mode-employed">Employed</label>
+              <input type="radio" id="mode-self" name="mode" value="self">
+              <label for="mode-self">Self-employed</label>
+            </div>
+          </fieldset>
           <div class="field">
             <label for="miles">Work miles per week</label>
             <div class="input-unit">
@@ -109,7 +137,7 @@
               <span class="unit">miles</span>
             </div>
           </div>
-          <div class="field">
+          <div class="field" id="pence-field">
             <label for="pence">What your employer pays per mile</label>
             <div class="input-unit">
               <input id="pence" name="pence" type="number" inputmode="decimal" min="0" max="100" step="1" value="30">
@@ -129,13 +157,31 @@
           <div class="result" aria-live="polite">
             <p class="result-main" id="calc-result">You could claim about <strong>£300</strong> back this tax year. You can also claim for up to 4 previous years if you have records of those miles.</p>
             <p class="result-none" id="calc-none" hidden>At 55p a mile or more, there is no gap to claim tax back on.</p>
+            <div id="calc-self" hidden>
+              <p class="result-main">Your miles are worth about <strong id="self-claim">£3,290</strong> off your profit this tax year — about <b class="num" id="self-tax">£660</b> less income tax.</p>
+              <p class="result-note">Short trips add up: missing just 10 miles a week costs you about £250 of claim a year.</p>
+            </div>
           </div>
-          <p class="fineprint">A rough guide, not tax advice. It assumes 46 working weeks a year and HMRC's rates of 55p a mile for the first 10,000 business miles and <span id="over-rate">25p</span> after that.</p>
+          <p class="fineprint" id="fine-employed">A rough guide, not tax advice. It assumes 46 working weeks a year and HMRC's rates of 55p a mile for the first 10,000 business miles and <span class="over-rate">25p</span> after that.</p>
+          <p class="fineprint" id="fine-self" hidden>A rough guide, not tax advice. Uses HMRC's simplified expenses mileage rates: 55p a mile for the first 10,000 business miles and <span class="over-rate">25p</span> after that, over 46 working weeks. You may also pay less National Insurance.</p>
         </form>
       </div>
     </section>
 
-    <!-- 3. How it works -->
+    <!-- 4. Private by design -->
+    <section class="section section-tight" id="private">
+      <div class="wrap narrow">
+        <div class="card private">
+          <span class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+          <div>
+            <h2>Private by design</h2>
+            <p>Your trips stay on your iPhone. No account, no Tripjot servers — we never see where you go.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. How it works -->
     <section class="section" id="how">
       <div class="orb orb-a" aria-hidden="true" style="width:420px; right:-120px; top:-40px"></div>
       <div class="wrap">
@@ -154,7 +200,7 @@
           <li>
             <span class="step-num">3</span>
             <h3>Export your totals</h3>
-            <p>As PDF or CSV for HMRC.</p>
+            <p>As PDF or CSV for HMRC, your accountant or your bookkeeping app.</p>
           </li>
         </ol>
       </div>
@@ -169,16 +215,16 @@
         <ul class="why">
           <li><span class="why-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><circle cx="5" cy="17" r="2"/><circle cx="12" cy="7" r="2"/><circle cx="19" cy="15" r="2"/><path d="M6.5 15.5 10.5 8.8M13.6 8.3l4 5"/></svg></span>
-            <p>Made for rounds with many short visits</p></li>
+            <p>Catches the short trips you forget to write down</p></li>
           <li><span class="why-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
             <p>UK rates built in: 55p, and 35p above 10,000 miles from April 2027</p></li>
           <li><span class="why-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M10 13l2 2 4-4"/></svg></span>
-            <p>Your own record to check your agency's app</p></li>
+            <p>Employed: your own record to check your employer's mileage pay</p></li>
           <li><span class="why-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
-            <p>14 days free, then £19.99 a year — no surprise price rises</p></li>
+            <p>14 days free, then £19.99 a year — about a fifth of the price of the big mileage apps</p></li>
         </ul>
       </div>
     </section>
@@ -203,8 +249,16 @@
         <h2>Questions</h2>
         <div class="faq">
           <details>
-            <summary>My employer already pays mileage. Can I still claim?</summary>
+            <summary>Employed: my employer already pays mileage. Can I still claim?</summary>
             <p>Yes, if they pay less than 55p a mile, you can claim tax relief on the difference.</p>
+          </details>
+          <details>
+            <summary>I'm self-employed. Is this for me?</summary>
+            <p>Yes. If you use HMRC's mileage rate on your tax return, you need a record of your business miles. Tripjot keeps it for you.</p>
+          </details>
+          <details>
+            <summary>Can you see where I go?</summary>
+            <p>No. Your trips are stored only on your iPhone. There is no account and we have no servers that receive your locations.</p>
           </details>
           <details>
             <summary>Is it on Android?</summary>
@@ -241,13 +295,21 @@
               <input id="first_name" name="first_name" type="text" autocomplete="given-name">
             </div>
             <fieldset class="field">
-              <legend>I am a:</legend>
+              <legend>I work:</legend>
               <div class="choices">
-                <label class="choice"><input type="radio" name="role" value="home_carer" required> <span>Home carer</span></label>
-                <label class="choice"><input type="radio" name="role" value="self_employed"> <span>Self-employed</span></label>
-                <label class="choice"><input type="radio" name="role" value="other"> <span>Other</span></label>
+                <label class="choice"><input type="radio" name="work_type" value="employed" required> <span>Employed</span></label>
+                <label class="choice"><input type="radio" name="work_type" value="self_employed"> <span>Self-employed</span></label>
+                <label class="choice"><input type="radio" name="work_type" value="both"> <span>Both</span></label>
               </div>
-              <p class="error" id="role-error" hidden>Please choose one option.</p>
+              <p class="error" id="work_type-error" hidden>Please choose one option.</p>
+            </fieldset>
+            <fieldset class="field">
+              <legend>My job:</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="job" value="care" required> <span>Care work</span></label>
+                <label class="choice"><input type="radio" name="job" value="other"> <span>Other</span></label>
+              </div>
+              <p class="error" id="job-error" hidden>Please choose one option.</p>
             </fieldset>
             <div class="field consent">
               <label class="check">
