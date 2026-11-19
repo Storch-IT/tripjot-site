@@ -17,3 +17,9 @@
   to = "https://tripjot.app/:splat"
   status = 301
   force = true
+
+# Privacy policy at a short address (App Store link): tripjot.app/privacy
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
