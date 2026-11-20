@@ -3,6 +3,22 @@
 
   var cfg = window.TRIPJOT_CONFIG || {};
 
+  /* ---------- Release day ----------
+     When config.js has appStoreUrl, the site switches from waitlist to App Store:
+     buttons with data-launch-text link to the App Store, [data-prelaunch] blocks hide,
+     [data-launch] blocks show. Empty appStoreUrl = waitlist mode (nothing changes). */
+  var appStoreUrl = /^https:\/\/apps\.apple\.com\//.test(cfg.appStoreUrl || "") ? cfg.appStoreUrl : "";
+  if (appStoreUrl) {
+    document.documentElement.classList.add("launched");
+    document.querySelectorAll("[data-launch-text]").forEach(function (a) {
+      a.href = appStoreUrl;
+      a.textContent = a.getAttribute("data-launch-text");
+      a.setAttribute("data-track", "app_store_click");
+    });
+    document.querySelectorAll("[data-prelaunch]").forEach(function (el) { el.hidden = true; });
+    document.querySelectorAll("[data-launch]").forEach(function (el) { el.hidden = false; });
+  }
+
   /* ---------- Analytics ----------
      track() sends an event to whichever free analytics tool is added to the page later
      (Umami, GoatCounter, Meta Pixel). Until then it only logs to the browser console.

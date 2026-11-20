@@ -39,3 +39,8 @@ Umami не використовує cookies, тому банер згоди не
 
 ## Посилання для реклами
 `https://tripjot.app/?utm_source=facebook&utm_medium=paid&utm_campaign=carers_test`
+
+## День запуску (App Store)
+У `public/config.js` вставити посилання в `appStoreUrl` (має починатися з `https://apps.apple.com/`). Тоді кнопки «Join the waitlist» (шапка, перший екран, плаваюча кнопка) ведуть в App Store, а форма, пропозиція £14.99 і «When does it launch?» ховаються (атрибути `data-prelaunch` / `data-launch` в `index.html`). Порожньо — режим списку очікування. Ще в цей день варто оновити `og:description` (там «Join the waitlist»).
+
+У підвалі є посилання Terms of Use на стандартну угоду Apple (EULA) і видима пошта для зв'язку — Apple перевіряє це під час рев'ю.

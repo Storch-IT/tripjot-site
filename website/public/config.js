@@ -14,5 +14,11 @@ window.TRIPJOT_CONFIG = {
 
   // Name of the person or business running Tripjot (for the privacy policy).
   // Ім'я власника (ФОП) — для політики конфіденційності.
-  ownerName: "Andrii Storcheus"
+  ownerName: "Andrii Storcheus",
+
+  // Release day: put the App Store link here (e.g. "https://apps.apple.com/gb/app/tripjot/id1234567890").
+  // Empty = waitlist mode. When filled, "Join the waitlist" buttons become App Store links,
+  // and the waitlist form, the founders offer and "When does it launch?" are hidden.
+  // День запуску: вставте сюди посилання на App Store. Порожньо — режим списку очікування.
+  appStoreUrl: ""
 };

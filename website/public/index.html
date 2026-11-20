@@ -43,7 +43,7 @@
         <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="lgClip"><path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z"/></clipPath><mask id="lgCar" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><path fill="#fff" d="M25.6 17.6h12.8a2.2 2.2 0 0 1 2 1.4l2.2 5.8H21.4l2.2-5.8a2.2 2.2 0 0 1 2-1.4z"/><rect fill="#fff" x="19.6" y="24" width="24.8" height="9.6" rx="3.2"/><rect fill="#fff" x="21.8" y="32" width="4.8" height="4.4" rx="1.5"/><rect fill="#fff" x="37.4" y="32" width="4.8" height="4.4" rx="1.5"/><path fill="#000" d="M26.4 19.6h11.2l1.5 3.8H24.9z"/><circle fill="#000" cx="24.4" cy="28.6" r="1.9"/><circle fill="#000" cx="39.6" cy="28.6" r="1.9"/></mask><linearGradient id="lgTint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="lg-a"/><stop offset="1" class="lg-b"/></linearGradient><linearGradient id="lgSheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="lg-s"/><stop offset=".38" class="lg-0"/><stop offset=".72" class="lg-0"/><stop offset="1" class="lg-s"/></linearGradient><linearGradient id="lgGlowT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="lg-g"/><stop offset="1" class="lg-0"/></linearGradient><linearGradient id="lgGlowB" x1="0" y1="1" x2="0" y2="0"><stop offset="0" class="lg-g"/><stop offset="1" class="lg-0"/></linearGradient></defs><path class="lg-base" d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z"/><path d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="url(#lgTint)"/><g clip-path="url(#lgClip)"><rect width="64" height="64" fill="url(#lgSheen)" opacity=".7"/><rect y="5" width="64" height="16" fill="url(#lgGlowT)"/><rect y="40" width="64" height="18" fill="url(#lgGlowB)" opacity=".7"/><path class="lg-in" d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" stroke-width="3" vector-effect="non-scaling-stroke"/></g><path class="lg-rim" d="M32 5C20.4 5 11 14.2 11 25.6c0 14.6 16.4 28.4 19.4 30.8a2.5 2.5 0 0 0 3.2 0C36.6 54 53 40.2 53 25.6 53 14.2 43.6 5 32 5z" fill="none" stroke-width="1.5" vector-effect="non-scaling-stroke"/><rect class="lg-car" width="64" height="64" mask="url(#lgCar)"/></svg>
         <span>Tripjot</span>
       </a>
-      <a class="btn btn-small" href="#waitlist" data-track="cta_click">Join the waitlist</a>
+      <a class="btn btn-small" href="#waitlist" data-track="cta_click" data-launch-text="Get the app">Join the waitlist</a>
     </div>
   </header>
 
@@ -56,7 +56,7 @@
           <h1>Every work mile, logged automatically.</h1>
           <p class="lead">Tripjot records each drive by itself and gives you the totals HMRC asks for. Made for home carers, and anyone with lots of short work trips.</p>
           <div class="hero-actions">
-            <a class="btn" href="#waitlist" data-track="cta_click">Join the waitlist</a>
+            <a class="btn" href="#waitlist" data-track="cta_click" data-launch-text="Download on the App Store">Join the waitlist</a>
             <a class="btn btn-glass" href="#calculator">How much is my mileage worth?</a>
           </div>
         </div>
@@ -230,7 +230,7 @@
     </section>
 
     <!-- 5. Founders offer -->
-    <section class="section" id="offer">
+    <section class="section" id="offer" data-prelaunch>
       <div class="orb orb-solid-b" aria-hidden="true" style="width:200px; left:calc(50% - 260px); top:20px"></div>
       <div class="orb orb-solid-a" aria-hidden="true" style="width:160px; left:calc(50% + 120px); bottom:10px"></div>
       <div class="wrap narrow">
@@ -264,16 +264,20 @@
             <summary>Is it on Android?</summary>
             <p>iPhone first.</p>
           </details>
-          <details>
+          <details data-prelaunch>
             <summary>When does it launch?</summary>
             <p>Early 2027.</p>
+          </details>
+          <details data-launch hidden>
+            <summary>Where can I get it?</summary>
+            <p>On the App Store, for iPhone, in the UK. It starts with a 14-day free trial.</p>
           </details>
         </div>
       </div>
     </section>
 
     <!-- 7. Waitlist -->
-    <section class="section" id="waitlist">
+    <section class="section" id="waitlist" data-prelaunch>
       <div class="orb orb-solid-a" aria-hidden="true" style="width:260px; right:-50px; top:40px"></div>
       <div class="orb orb-solid-b" aria-hidden="true" style="width:200px; left:-50px; bottom:120px"></div>
       <div class="wrap narrow">
@@ -340,8 +344,9 @@
 
   <!-- Floating glass button on phones -->
   <div class="dock" id="dock">
-    <div class="dock-text"><b>£14.99</b><span>first year</span></div>
-    <a class="btn" href="#waitlist" data-track="cta_click" tabindex="-1">Join the waitlist</a>
+    <div class="dock-text" data-prelaunch><b>£14.99</b><span>first year</span></div>
+    <div class="dock-text" data-launch hidden><b>14 days</b><span>free trial</span></div>
+    <a class="btn" href="#waitlist" data-track="cta_click" data-launch-text="Get the app" tabindex="-1">Join the waitlist</a>
   </div>
 
   <!-- 8. Footer -->
@@ -366,7 +371,9 @@
         <p class="footer-links">
           <a href="privacy.html">Privacy policy</a>
           <span aria-hidden="true">·</span>
-          <a data-contact-link href="mailto:hellotripjot@gmail.com">Contact</a>
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Terms of Use</a>
+          <span aria-hidden="true">·</span>
+          Contact: <a data-contact-text href="mailto:hellotripjot@gmail.com">hellotripjot@gmail.com</a>
         </p>
         <p class="muted small">© 2026 Tripjot</p>
       </div>
